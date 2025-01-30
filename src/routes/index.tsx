@@ -7,13 +7,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // const EventList = lazy(() => import("../pages/EventList"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 const EventDetail = lazy(() => import("../pages/EventDetail"))
+const EventList = lazy(() => import("../pages/EventList"))
+
 const Header = lazy(() => import("../components/Header"))
 
-// import Header from '../components/Header';
+
 
 // Loading spinner
 import Loading from "../components/Loading";
-
 
 
 const AppRoutes = () => {
@@ -22,7 +23,7 @@ const AppRoutes = () => {
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Header />} />
-          <Route path="/abc" element={<Header />} />
+          <Route path="/events" element={<EventList />} />
 
           <Route path="*" element={<NotFound />} />
           <Route path="/event/:id" element={<EventDetail />} />

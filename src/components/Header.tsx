@@ -9,7 +9,7 @@ const Header = () => {
     };
 
     return (
-        <div className="flex justify-between items-center px-6 md:px-16 py-3 w-full text-lg font-medium shadow-md">
+        <div className="flex justify-between items-center px-6 md:px-16 py-3 w-full text-lg font-medium shadow-md sticky top-0">
             <img
                 src="https://logo.com/image-cdn/images/kts928pd/production/672366ef8161380f2cee0bbfbb6670beac767810-367x355.png?w=1080&q=72&fm=webp"
                 alt=""
