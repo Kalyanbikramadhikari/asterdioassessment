@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const NotFound = lazy(() => import("../pages/NotFound"));
 const EventDetail = lazy(() => import("../pages/EventDetail"))
 const EventList = lazy(() => import("../pages/EventList"))
+const Favorites = lazy(() => import("../pages/Favorites"))
+
 
 const Header = lazy(() => import("../components/Header"))
 
@@ -22,8 +24,10 @@ const AppRoutes = () => {
     <Router>
       <Suspense fallback={<Loading />}>
         <Routes>
-          <Route path="/" element={<Header />} />
+          <Route path="/" element={<EventList />} />
           <Route path="/events" element={<EventList />} />
+          <Route path="/favorites" element={<Favorites />} />
+
 
           <Route path="*" element={<NotFound />} />
           <Route path="/event/:id" element={<EventDetail />} />

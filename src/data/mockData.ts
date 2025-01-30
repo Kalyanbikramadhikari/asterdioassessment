@@ -90,7 +90,7 @@ const MockData = [
       "guests": 100
     },
     {
-      "id": 10,
+      "id": 0,
       "name": "Holi Festival Celebration",
       "location": "Kathmandu, Nepal",
       "time": "2024-03-10T10:00:00",
