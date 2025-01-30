@@ -1,10 +1,16 @@
 import { Link, useParams } from "react-router-dom";
-import MockData from "../data/mockData";
+// import MockData from "../data/mockData";
 import { LocationOn, People, CalendarToday, Event } from "@mui/icons-material";
+import { useGetEventsQuery } from "../store/APIfeatures/eventAPi";
 
 const EventDetails = () => {
   const { id } = useParams();
-  const event = MockData.find((e) => e.id === Number(id));
+  const { data: events, isLoading, isError } = useGetEventsQuery();
+
+
+  
+  const event = events ? events.find((e) => e.id === Number(id)) : null;
+  // const event = MockData.find((e) => e.id === Number(id));
   if (!event) {
     return <div>Event not found!</div>;
   }

@@ -1,9 +1,10 @@
-import { Event as EventIcon, LocationOn, People, CalendarToday, Favorite, FavoriteBorder } from "@mui/icons-material";
+import { Event as EventIcon, LocationOn, People, CalendarToday, Favorite, FavoriteBorder, Delete } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { addToFavorites, removeFromFavorites } from "../store/reducerSlices/favoritesSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store";
-
+import EditIcon from '@mui/icons-material/Edit';
+import { useState } from "react";
 
 interface Event {
     id: number;
@@ -18,12 +19,14 @@ interface Event {
 
 interface EventCardProps {
     event: Event;
+    onDelete: (id: number) => Promise<void>;
 }
 
-const EventCard = ({ event }: EventCardProps) => {
+const EventCard: React.FC<EventCardProps> = ({ event, onDelete }) => {
     const dispatch = useDispatch();
     const favorites = useSelector((state: RootState) => state.favorites.favorites);
     const isFavorite = favorites.some((fav: Event) => fav.id === event.id);
+    const [openDeleteConfirmation, setOpenDeleteConfirmation] = useState(false);
 
     const toggleFavorite = () => {
         if (isFavorite) {
@@ -32,9 +35,31 @@ const EventCard = ({ event }: EventCardProps) => {
             dispatch(addToFavorites(event));
         }
     };
+    const handleDeleteClick = () => {
+        setOpenDeleteConfirmation(true);
+    };
+    const confirmDelete = () => {
+        onDelete(event.id); // Call the parent's delete handler
+        setOpenDeleteConfirmation(false);
+    };
+
+    const cancelDelete = () => {
+        setOpenDeleteConfirmation(false);
+    };
+
     return (
 
-        <div key={event.id} className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer">
+        <div key={event.id} className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer relative">
+            <Link to={`/event/update/${event.id}`}>
+
+                <div className="flex justify-center items-center h-10 w-10 bg-gray-200 absolute top-3 right-3 rounded-full" >
+                    <EditIcon />
+                </div>
+            </Link>
+
+            <div onClick={handleDeleteClick} className="flex justify-center items-center h-10 w-10 bg-gray-200 absolute top-3 left-3 text-red-600 rounded-full" >
+                <Delete />
+            </div>
             <Link to={`/event/${event.id}`}>
 
                 <img src={event.image} alt={event.name} className="w-full h-48 object-cover" />
@@ -67,6 +92,24 @@ const EventCard = ({ event }: EventCardProps) => {
                 {isFavorite ? <Favorite /> : <FavoriteBorder />}
                 <span className="ml-2">{isFavorite ? "Remove from Favorites" : "Add to Favorites"}</span>
             </button>
+
+
+
+            {openDeleteConfirmation && (
+                <div className="fixed inset-0 z-50 bg-gray-600 bg-opacity-50 flex justify-center items-center">
+                    <div className="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 className="text-xl font-bold mb-4">Are you sure you want to delete this event?</h3>
+                        <div className="flex justify-end space-x-4">
+                            <button onClick={cancelDelete} className="px-4 py-2 bg-gray-200 rounded-lg cursor-pointer">
+                                Cancel
+                            </button>
+                            <button onClick={confirmDelete} className="px-4 py-2 bg-red-600 text-white rounded-lg cursor-pointer">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }

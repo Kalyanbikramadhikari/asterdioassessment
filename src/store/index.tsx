@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import favoritesSlice from "./reducerSlices/favoritesSlice";
 import { setupListeners } from '@reduxjs/toolkit/query';
+import { eventsApi } from "./APIfeatures/eventAPi";
 
 
 // Middleware to save favorites to localStorage
@@ -14,11 +15,13 @@ import { setupListeners } from '@reduxjs/toolkit/query';
 
 export const store = configureStore({
     reducer: {
+        [eventsApi.reducerPath]: eventsApi.reducer,
         favorites: favoritesSlice,
     },
-    // middleware: (getDefaultMiddleware) =>
-    //     getDefaultMiddleware().concat(localStorageMiddleware),
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(eventsApi.middleware),
 });
+
 setupListeners(store.dispatch);
 export type RootState = ReturnType<typeof store.getState>;
 
