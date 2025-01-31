@@ -53,8 +53,10 @@ The **Event Management Application** is a platform developed to manage, organize
 ### 8. **Form Validation**
    - All forms (create/update events) are validated using **Formik** and **Yup**.
    - Ensures data integrity and provides user-friendly error messages.
-### 8. **Toast  Message on api request**
+### 9. **Toast  Message on api request**
     - Toast Message on api hit handled with **react-toastify**
+### 10. **Testing**
+    - Wrote code for testing with **JEST** but due to issues in configuring jest/dom went into issue and could not test.
     
      
 
