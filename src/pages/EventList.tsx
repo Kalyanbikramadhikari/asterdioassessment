@@ -10,6 +10,7 @@ import Loading from "../components/Loading";
 import ApiError from "./ApiError";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 
 interface Event {
@@ -33,6 +34,9 @@ const EventList = () => {
     const [sortBy, setSortBy] = useState("date");
     const [currentPage, setCurrentPage] = useState(1);
     const eventsPerPage = 3;
+
+    const { t } = useTranslation();
+
 
     const handleDeleteEvent = async (id: number) => {
         try {
@@ -77,11 +81,11 @@ const EventList = () => {
 
                         <div className="p-6 px-16">
                             <div className="flex justify-between items-center mb-5">
-                                <h1 className="text-3xl font-bold mb-6">Event Listings</h1>
+                                <h1 className="text-3xl font-bold mb-6">{t("eventList.title")}</h1>
 
                                 <Link to="/addEvent">
                                     <button className="hidden md:flex  bg-[#E93D14] px-6 py-2 text-[#ffffff] rounded-3xl cursor-pointer ">
-                                        Add Event <Add />
+                                        {t("eventList.addEvent")} <Add />
                                     </button>
                                 </Link>
                             </div>
@@ -92,7 +96,7 @@ const EventList = () => {
                                     <Search className="text-gray-400 mr-2" />
                                     <input
                                         type="text"
-                                        placeholder="Search events..."
+                                        placeholder={t("eventList.searchPlaceholder")}
                                         value={searchQuery}
                                         onChange={(e) => setSearchQuery(e.target.value)}
                                         className="outline-none flex-1"
@@ -105,9 +109,9 @@ const EventList = () => {
                                         onChange={(e) => setSortBy(e.target.value)}
                                         className="outline-none"
                                     >
-                                        <option value="date">Sort by Date</option>
-                                        <option value="guest">Sort by No.of Guest</option>
-                                        <option value="distance">Sort by Distance from TIA</option>
+                                        <option value="date">{t("eventList.sortBy.date")}</option>
+                                        <option value="guest">{t("eventList.sortBy.guest")}</option>
+                                        {/* <option value="distance">Sort by Distance from TIA</option> */}
                                         {/* <option value="date">Sort by Date</option> */}
 
                                     </select>

@@ -5,10 +5,13 @@ import Header from "../components/Header";
 import ApiError from "./ApiError";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const AddEvent = () => {
     const [addEvent, { data, isLoading, isError, isSuccess }] = useAddEventMutation();
     const { refetch } = useGetEventsQuery();
+        const { t } = useTranslation();
+    
 
     const navigate = useNavigate()
 
@@ -53,10 +56,10 @@ const AddEvent = () => {
         <div>
             <Header />
             <form onSubmit={formik.handleSubmit} className="p-6 px-16 bg-white rounded-lg shadow-md">
-                <h2 className="text-2xl font-bold mb-4">Add New Event</h2>
+                <h2 className="text-2xl font-bold mb-4">{t("FormData.addNewEvent")}</h2>
 
                 <div className="mb-4">
-                    <label className="block font-semibold">Event Name</label>
+                    <label className="block font-semibold">{t("FormData.eventName")}</label>
                     <input
                         type="text"
                         name="name"
@@ -69,7 +72,7 @@ const AddEvent = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label className="block font-semibold">Location</label>
+                    <label className="block font-semibold">{t("FormData.location")}</label>
                     <input
                         type="text"
                         name="location"
@@ -82,7 +85,7 @@ const AddEvent = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label className="block font-semibold">Date & Time</label>
+                    <label className="block font-semibold">{t("FormData.dateandTime")}</label>
                     <input
                         type="datetime-local"
                         name="time"
@@ -95,7 +98,7 @@ const AddEvent = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label className="block font-semibold">Organizer</label>
+                    <label className="block font-semibold">{t("FormData.organizer")}</label>
                     <input
                         type="text"
                         name="organizer"
@@ -108,7 +111,7 @@ const AddEvent = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label className="block font-semibold">Description</label>
+                    <label className="block font-semibold">{t("FormData.description")}</label>
                     <textarea
                         name="description"
                         onChange={formik.handleChange}
@@ -120,7 +123,7 @@ const AddEvent = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label className="block font-semibold">Image address only</label>
+                    <label className="block font-semibold">{t("FormData.image")}</label>
                     <input
                         type="text"
                         name="image"
@@ -133,7 +136,7 @@ const AddEvent = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label className="block font-semibold">No. of Guests</label>
+                    <label className="block font-semibold">{t("FormData.noOfGuests")}</label>
                     <input
                         type="number"
                         name="guests"
@@ -155,7 +158,7 @@ const AddEvent = () => {
                                 </svg>
                             ) :
                             (
-                                <span>Add Event</span>
+                                <span>{t("FormData.addEvent")}</span>
                             )
 
                     }

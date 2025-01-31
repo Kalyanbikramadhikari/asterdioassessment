@@ -2,10 +2,15 @@ import { Link, useLocation } from "react-router-dom";
 
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
+
+
 
 const Header = () => {
     const location = useLocation();
     const favorites = useSelector((state: RootState) => state.favorites.favorites);
+    const { t } = useTranslation();
 
 
     return (
@@ -19,27 +24,27 @@ const Header = () => {
             </Link>
             <div className="flex gap-10 md:gap-16">
                 <span
-                    className={`cursor-pointer ${location.pathname === '/' ? 'text-[#E93D14]' : ''}`}                >
-                    <Link to='/'> Home</Link>
+                    className={`cursor-pointer ${location.pathname === '/' || location.pathname === '/events' ? 'text-[#E93D14]' : ''}`}                >
+                    <Link to='/'> {t("header.Home")}</Link>
 
                 </span>
                 <span
                     className={`cursor-pointer ${location.pathname === '/about' ? 'text-[#E93D14]' : ''}`}                >
-                    <Link to='/about'> About</Link>
+                    <Link to='/about'> {t("header.About")}</Link>
 
 
                 </span>
                 <span
                     className={`cursor-pointer relative ${location.pathname === '/favorites' ? 'text-[#E93D14]' : ''}`}
                 >
-                    <Link to='/favorites'> Favorites <div className="absolute -top-3 -right-8 bg-[#ea6847] h-8 w-8 rounded-full flex justify-center items-center text-white">{favorites.length}</div></Link>
+                    <Link to='/favorites'> {t("header.Favorites")} <div className="absolute -top-3 -right-8 bg-[#ea6847] h-8 w-8 rounded-full flex justify-center items-center text-white">{favorites.length}</div></Link>
 
 
                 </span>
             </div>
 
             <button className="hidden md:flex border-2 border-[#E93D14] px-6 py-2 text-[#E93D14] rounded-3xl ">
-                Contact Now
+                <LanguageSwitcher/>
             </button>
 
 

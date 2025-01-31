@@ -1,0 +1,44 @@
+{
+  "translation": {
+    "header": {
+      "Home": "Home",
+      "About": "About",
+      "Favorites": "Favorites"
+    },
+    "eventList": {
+      "title": "Event Listings",
+      "addEvent": "Add Event",
+      "searchPlaceholder": "Search events...",
+      "sortBy": {
+        "date": "Sort by Date",
+        "guest": "Sort by No. of Guests",
+        "distance": "Sort by Distance from TIA"
+      }
+    },
+    "eventCard": {
+      "guests": "Guests",
+      "addToFavorites": "Add to Favorites",
+      "removeFromFavorites": "Remove from Favorites",
+      "deleteConfirmation": "Are you sure you want to delete this event?",
+      "cancel": "Cancel",
+      "delete": "Delete"
+    },
+    "apiError":"Error in calling API",
+    "pageNotFound":" 404 - Page Not Found",
+
+    "FormData":{
+      "addNewEvent":"Add New Event",
+      "addEvent":"Add Event",
+      "eventName":"Event Name",
+      "location":"Location",
+      "dateandTime":"Date & Time",
+      "organizer":"Organizer",
+      "description":"Description",
+      "image":"Image address only",
+      "noOfGuests":"No. of Guests",
+      "updateEvent":"Update Event"
+
+
+    }
+  }
+}

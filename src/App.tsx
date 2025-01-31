@@ -1,5 +1,5 @@
 import Routes from './routes'
-
+import './language/i18n'
 
 // react tostify
 

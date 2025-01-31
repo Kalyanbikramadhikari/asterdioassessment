@@ -1,0 +1,41 @@
+{
+  "translation": {
+    "header": {
+      "Home": "Accueil",
+      "About": "À propos",
+      "Favorites": "Favoris"
+    },
+    "eventList": {
+      "title": "Liste des Événements",
+      "addEvent": "Ajouter un Événement",
+      "searchPlaceholder": "Rechercher des événements...",
+      "sortBy": {
+        "date": "Trier par Date",
+        "guest": "Trier par Nombre d'Invités",
+        "distance": "Trier par Distance de TIA"
+      }
+    },
+    "eventCard": {
+      "guests": "Invités",
+      "addToFavorites": "Ajouter aux Favoris",
+      "removeFromFavorites": "Retirer des Favoris",
+      "deleteConfirmation": "Êtes-vous sûr de vouloir supprimer cet événement ?",
+      "cancel": "Annuler",
+      "delete": "Supprimer"
+    },
+    "apiError": "Erreur lors de l'appel de l'API",
+    "pageNotFound": "404 - Page non trouvée",
+    "FormData": {
+      "addNewEvent": "Ajouter un nouvel événement",
+      "addEvent": "Ajouter un événement",
+      "eventName": "Nom de l'événement",
+      "location": "Emplacement",
+      "dateandTime": "Date et heure",
+      "organizer": "Organisateur",
+      "description": "Description",
+      "image": "Adresse de l'image uniquement",
+      "noOfGuests": "Nombre d'invités",
+      "updateEvent": "Mettre à jour l'événement"
+    }
+  }
+}

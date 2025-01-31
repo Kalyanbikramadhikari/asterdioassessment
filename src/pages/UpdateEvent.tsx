@@ -6,6 +6,7 @@ import ApiError from "./ApiError";
 import { toast } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
 import MockData from "../data/mockData";
+import { useTranslation } from "react-i18next";
 
 
 interface Event {
@@ -22,6 +23,8 @@ interface Event {
 const UpdateEvent = () => {
     const [updateEvent, { isLoading, isError, isSuccess }] = useUpdateEventMutation();
     const { refetch } = useGetEventsQuery();
+    const { t } = useTranslation();
+
 
     const navigate = useNavigate()
 
@@ -54,9 +57,9 @@ const UpdateEvent = () => {
             await updateEvent({
                 id: Number(id),
                 updatedData: values
-            }); 
+            });
             refetch();
-            
+
             resetForm();
         },
     });
@@ -77,10 +80,10 @@ const UpdateEvent = () => {
         <div>
             <Header />
             <form onSubmit={formik.handleSubmit} className="p-6 px-16 bg-white rounded-lg shadow-md">
-                <h2 className="text-2xl font-bold mb-4">Update {event?.name}</h2>
+                <h2 className="text-2xl font-bold mb-4">{t("FormData.updateEvent")} {event?.name}</h2>
 
                 <div className="mb-4">
-                    <label className="block font-semibold">Event Name</label>
+                    <label className="block font-semibold">{t("FormData.eventName")}</label>
                     <input
                         type="text"
                         name="name"
@@ -95,7 +98,7 @@ const UpdateEvent = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label className="block font-semibold">Location</label>
+                    <label className="block font-semibold">{t("FormData.location")}</label>
                     <input
                         type="text"
                         name="location"
@@ -108,7 +111,7 @@ const UpdateEvent = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label className="block font-semibold">Date & Time</label>
+                    <label className="block font-semibold">{t("FormData.dateandTime")}</label>
                     <input
                         type="datetime-local"
                         name="time"
@@ -121,7 +124,7 @@ const UpdateEvent = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label className="block font-semibold">Organizer</label>
+                    <label className="block font-semibold">{t("FormData.organizer")}</label>
                     <input
                         type="text"
                         name="organizer"
@@ -134,7 +137,7 @@ const UpdateEvent = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label className="block font-semibold">Description</label>
+                    <label className="block font-semibold">{t("FormData.description")}</label>
                     <textarea
                         name="description"
                         onChange={formik.handleChange}
@@ -146,7 +149,7 @@ const UpdateEvent = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label className="block font-semibold">Image address only</label>
+                    <label className="block font-semibold">{t("FormData.image")}</label>
                     <input
                         type="text"
                         name="image"
@@ -159,7 +162,7 @@ const UpdateEvent = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label className="block font-semibold">No. of Guests</label>
+                    <label className="block font-semibold">{t("FormData.noOfGuests")}</label>
                     <input
                         type="number"
                         name="guests"
