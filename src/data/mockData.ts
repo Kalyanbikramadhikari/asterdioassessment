@@ -15,7 +15,7 @@ const MockData = [
       "location": "Pokhara, Nepal",
       "time": "2023-12-10T06:00:00",
       "organizer": "Pokhara Sports Club",
-      "description": "Join the annual marathon around the beautiful city of Pokhara.",
+      "description": "Join the annual marathon around the beautiful city of Pokhara. Run for you health.",
       "image": "https://eventmx.com/media/ck_uploads/Summit7303e8ab2b/2024/01/23/419202408_938542621610117_6911470641373381576_n.jpg ",
       "guests": 2000
     },
@@ -25,7 +25,7 @@ const MockData = [
       "location": "Lumbini, Nepal",
       "time": "2023-12-15T09:00:00",
       "organizer": "Peaceful Minds Nepal",
-      "description": "A 5-day meditation retreat in the birthplace of Buddha.",
+      "description": "A 5-day meditation retreat in the birthplace of Buddha. Build good mental health.",
       "image": "https://bookretreats.com/cdn-cgi/image/width=1200,quality=65,f=auto,sharpen=1,fit=cover,gravity=auto/assets/photo/retreat/0m/47k/47133/p_1722000/1000_1729776947.jpg ",
       "guests": 300
     },
@@ -75,7 +75,7 @@ const MockData = [
       "location": "Kathmandu, Nepal",
       "time": "2024-02-15T12:00:00",
       "organizer": "Nepal Tourism Board",
-      "description": "Taste the diverse cuisines of Nepal in one place.",
+      "description": "Taste the diverse cuisines of Nepal in one place. Nepali Food Festival",
       "image": "https://www.altitudehimalaya.com/media/files/Blog/Food/Nepalese-Food.jpeg ",
       "guests": 5000
     },
@@ -95,7 +95,7 @@ const MockData = [
       "location": "Kathmandu, Nepal",
       "time": "2024-03-10T10:00:00",
       "organizer": "Nepal Cultural Society",
-      "description": "Celebrate the festival of colors with music, dance, and fun. THe",
+      "description": "Celebrate the festival of colors with music, dance, and fun. Enjoy the colors with festival",
       "image": "https://www.travelandleisure.com/thmb/OGqKU3DtKB-TmF7OWZKtP58jy88=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/bhaktapur-nepal-holi-HOLI0219-b713df59f115452baa1374efb3e59ff2.jpg",
       "guests": 10000
     }

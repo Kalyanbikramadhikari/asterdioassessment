@@ -14,12 +14,12 @@ const Header = () => {
 
 
     return (
-        <div className="flex justify-between items-center bg-gray-100 px-6 md:px-16 py-3 w-full text-lg font-medium shadow-md sticky top-0">
+        <div className="flex justify-between items-center bg-gray-100 px-6 md:px-16 py-3 w-full text-lg font-medium shadow-md sticky top-0 z-20">
             <Link to='/'>
                 <img
                     src="https://logo.com/image-cdn/images/kts928pd/production/672366ef8161380f2cee0bbfbb6670beac767810-367x355.png?w=1080&q=72&fm=webp"
                     alt=""
-                    className="h-12 rounded-full"
+                    className="h-12 rounded-full hidden md:flex"
                 />
             </Link>
             <div className="flex gap-10 md:gap-16">
@@ -37,13 +37,13 @@ const Header = () => {
                 <span
                     className={`cursor-pointer relative ${location.pathname === '/favorites' ? 'text-[#E93D14]' : ''}`}
                 >
-                    <Link to='/favorites'> {t("header.Favorites")} <div className="absolute -top-3 -right-8 bg-[#ea6847] h-8 w-8 rounded-full flex justify-center items-center text-white">{favorites.length}</div></Link>
+                    <Link to='/favorites'> {t("header.Favorites")} <div className="absolute -top-3 -right-3 md:-right-8 bg-[#ea6847] h-5 w-5 text-sm md:text-lg md:h-8 md:w-8 rounded-full flex justify-center items-center text-white">{favorites.length}</div></Link>
 
 
                 </span>
             </div>
 
-            <button className="hidden md:flex border-2 border-[#E93D14] px-6 py-2 text-[#E93D14] rounded-3xl ">
+            <button className="sm:text-sm flex border-2 border-[#E93D14] px-3 md:px-6 py-2 text-[#E93D14] rounded-3xl ">
                 <LanguageSwitcher/>
             </button>
 

@@ -24,7 +24,7 @@ const EventDetails = () => {
         isLoading ? <Loading /> : isError ? <ApiError /> : (
           <>
             <Header />
-            <div className="p-6 px-16">
+            <div className="p-6 md:px-16 text-sm md:text-lg">
 
 
               {/* Breadcrumb Navigation */}
@@ -53,9 +53,9 @@ const EventDetails = () => {
               </nav>
 
               {/* Event Details */}
-              <div className=" flex gap-5 items-center p-4 overflow-hidden">
-                <img src={event.image} alt={event.name} className=" h-64 object-cover w-[45%]" />
-                <div className="p-6 w-[45%]">
+              <div className="flex flex-col  md:flex-row gap-5 items-center md:p-4 ">
+                <img src={event.image} alt={event.name} className=" h-64 object-cover w-full md:w-[45%]" />
+                <div className="md:p-6 w-full md:w-[45%]">
                   <h1 className="text-3xl font-bold mb-4">{event.name}</h1>
                   <div className="space-y-4">
                     <div className="flex items-center text-gray-600">

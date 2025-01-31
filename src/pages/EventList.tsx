@@ -79,12 +79,12 @@ const EventList = () => {
                     <>
                         <Header />
 
-                        <div className="p-6 px-16">
+                        <div className="p-6 md:px-16">
                             <div className="flex justify-between items-center mb-5">
-                                <h1 className="text-3xl font-bold mb-6">{t("eventList.title")}</h1>
+                                <h1 className=" text-xl md:text-3xl font-bold ">{t("eventList.title")}</h1>
 
                                 <Link to="/addEvent">
-                                    <button className="hidden md:flex  bg-[#E93D14] px-6 py-2 text-[#ffffff] rounded-3xl cursor-pointer ">
+                                    <button className="  bg-[#E93D14] px-6 py-2 text-[#ffffff] rounded-3xl cursor-pointer ">
                                         {t("eventList.addEvent")} <Add />
                                     </button>
                                 </Link>
@@ -122,19 +122,19 @@ const EventList = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {currentEvents && currentEvents.map((event) => (
                                     < div key={event.id}>
-                                        <EventCard event={event} onDelete={handleDeleteEvent} deleteVisible={true}/>
+                                        <EventCard event={event} onDelete={handleDeleteEvent} deleteVisible={true} />
 
                                     </div>
                                 ))}
                             </div>
 
                             {/* Pagination */}
-                            <div className="flex justify-center mt-6">
+                            <div className="flex justify-center mt-6 ">
                                 {Array.from({ length: Math.ceil((sortedEvents?.length || 0) / eventsPerPage) }).map((_, index) => (
                                     <button
                                         key={index + 1}
                                         onClick={() => paginate(index + 1)}
-                                        className={`mx-1 px-4 py-2 rounded-lg ${currentPage === index + 1 ? "bg-blue-500 text-white" : "bg-white"
+                                        className={`mx-1 px-4 py-2 rounded-lg cursor-pointer ${currentPage === index + 1 ? "bg-blue-500 text-white" : "bg-white"
                                             }`}
                                     >
                                         {index + 1}

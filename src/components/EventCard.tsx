@@ -54,7 +54,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, onDelete, deleteVisible })
 
     return (
 
-        <div key={event.id} className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer relative">
+        <div key={event.id} className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer relative text-sm md:text-base">
             <Link to={`/event/update/${event.id}`}>
 
                 <div className="flex justify-center items-center h-10 w-10 bg-gray-200 absolute top-3 right-3 rounded-full" >
@@ -98,7 +98,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, onDelete, deleteVisible })
             </Link >
 
 
-            <button onClick={toggleFavorite} className="mt-4 text-blue-500 hover:text-blue-700">
+            <button onClick={toggleFavorite} className="mt-4 text-blue-500 hover:text-blue-700 pl-3 pb-3">
                 {isFavorite ? <Favorite /> : <FavoriteBorder />}
                 <span className="ml-2">{isFavorite ? t("eventCard.addToFavorites") : t("eventCard.removeFromFavorites")}</span>
             </button>

@@ -8,14 +8,14 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center sm:text-sm md:text-lg">
       <select
         onChange={(e) => changeLanguage(e.target.value)}
         value={i18n.language}
         className="outline-none"
       >
-        <option value="en">English</option>
-        <option value="fr">Français</option>
+        <option className="flex items-center text-[10px] md:text-lg" value="en">English</option>
+        <option className="flex items-center text-[10px] md:text-lg" value="fr">Français</option>
       </select>
     </div>
   );

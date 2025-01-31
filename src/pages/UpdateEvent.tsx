@@ -79,7 +79,7 @@ const UpdateEvent = () => {
     return (
         <div>
             <Header />
-            <form onSubmit={formik.handleSubmit} className="p-6 px-16 bg-white rounded-lg shadow-md">
+            <form onSubmit={formik.handleSubmit} className="p-6 md:px-60 lg:px-96 bg-white rounded-lg shadow-md">
                 <h2 className="text-2xl font-bold mb-4">{t("FormData.updateEvent")} {event?.name}</h2>
 
                 <div className="mb-4">
