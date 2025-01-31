@@ -73,7 +73,6 @@ const UpdateEvent = () => {
 
         navigate('/');
         window.location.reload()
-
     }
 
     return (

@@ -10,9 +10,9 @@
       "addEvent": "Ajouter un Événement",
       "searchPlaceholder": "Rechercher des événements par nom...",
       "sortBy": {
-        "date": "Trier par Date",
-        "guest": "Trier par Nombre d'Invités",
-        "distance": "Trier par Distance de TIA"
+        "date": " Date",
+        "guest": " Nombre d'Invités",
+        "default": "Par défaut"
       }
     },
     "eventCard": {

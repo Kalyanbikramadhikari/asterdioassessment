@@ -31,7 +31,7 @@ const EventList = () => {
     const [deleteEvent] = useDeleteEventMutation();
 
     const [searchQuery, setSearchQuery] = useState("");
-    const [sortBy, setSortBy] = useState("date");
+    const [sortBy, setSortBy] = useState("default");
     const [currentPage, setCurrentPage] = useState(1);
     const eventsPerPage = 3;
 
@@ -40,7 +40,7 @@ const EventList = () => {
 
     const handleDeleteEvent = async (id: number) => {
         try {
-            await deleteEvent(id); // Call API to delete the event
+            await deleteEvent(id);
             toast.success("Event deleted successfully!");
         } catch (error) {
             toast.error("Failed to delete the event.");
@@ -56,11 +56,10 @@ const EventList = () => {
     // Sort events by date
     const sortedEvents = searchedEvent && searchedEvent.sort((a, b) => {
         if (sortBy === "date") {
-            return new Date(a.time).getTime() - new Date(b.time).getTime(); // Convert dates to timestamps
-        }
-        //  else if(sortBy === 'guest'){
-        //     return 
-        // }
+            return new Date(a.time).getTime() - new Date(b.time).getTime();
+        } else if (sortBy === "guest") {
+            return a.guests - b.guests; 
+        } 
         return 0;
     });
 
@@ -109,8 +108,10 @@ const EventList = () => {
                                         onChange={(e) => setSortBy(e.target.value)}
                                         className="outline-none"
                                     >
+                                        <option value="default">{t("eventList.sortBy.default")}</option>
                                         <option value="date">{t("eventList.sortBy.date")}</option>
                                         <option value="guest">{t("eventList.sortBy.guest")}</option>
+
                                         {/* <option value="distance">Sort by Distance from TIA</option> */}
                                         {/* <option value="date">Sort by Date</option> */}
 

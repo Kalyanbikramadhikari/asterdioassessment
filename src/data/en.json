@@ -10,9 +10,9 @@
       "addEvent": "Add Event",
       "searchPlaceholder": "Search events By Name...",
       "sortBy": {
-        "date": "Sort by Date",
-        "guest": "Sort by No. of Guests",
-        "distance": "Sort by Distance from TIA"
+        "date": " Date",
+        "guest": " No. of Guests",
+        "default": "Default"
       }
     },
     "eventCard": {
