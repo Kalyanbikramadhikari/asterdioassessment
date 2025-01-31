@@ -15,7 +15,9 @@ interface Event {
 }
 const Favorites = () => {
     const favorites = useSelector((state: RootState) => state.favorites.favorites);
-
+    const handleDeleteEvent = async () => {
+       return
+    };
 
 
     return (
@@ -39,7 +41,7 @@ const Favorites = () => {
                             </div>                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {favorites.map((event: Event) => (
                                     <div key={event.id} className="favorite-item">
-                                        <EventCard key={event.id} event={event} deleteVisible={false} />
+                                        <EventCard key={event.id} onDelete={handleDeleteEvent} event={event} deleteVisible={false} />
                                     </div>
                                 ))}
                             </div>

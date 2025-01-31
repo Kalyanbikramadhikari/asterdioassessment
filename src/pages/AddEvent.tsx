@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const AddEvent = () => {
-    const [addEvent, { data, isLoading, isError, isSuccess }] = useAddEventMutation();
+    const [addEvent, {  isLoading, isError, isSuccess }] = useAddEventMutation();
     const { refetch } = useGetEventsQuery();
         const { t } = useTranslation();
     

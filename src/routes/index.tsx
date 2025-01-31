@@ -14,9 +14,6 @@ const UpdateEvents = lazy(() => import("../pages/UpdateEvent"))
 
 
 
-const Header = lazy(() => import("../components/Header"))
-
-
 
 // Loading spinner
 import Loading from "../components/Loading";

@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import { Search, FilterList, Event, Add } from "@mui/icons-material";
+import { useState } from "react";
+import { Search, FilterList,  Add } from "@mui/icons-material";
 
 
-import MockData from "../data/mockData";
+// import MockData from "../data/mockData";
 import Header from "../components/Header";
 import EventCard from "../components/EventCard";
 import { useDeleteEventMutation, useGetEventsQuery } from "../store/APIfeatures/eventAPi";
@@ -13,16 +13,16 @@ import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 
 
-interface Event {
-    id: number;
-    name: string;
-    location: string;
-    time: string;
-    organizer: string;
-    description: string;
-    image: string;
-    guests: number;
-}
+// interface Event {
+//     id: number;
+//     name: string;
+//     location: string;
+//     time: string;
+//     organizer: string;
+//     description: string;
+//     image: string;
+//     guests: number;
+// }
 
 
 const EventList = () => {
