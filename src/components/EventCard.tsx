@@ -100,7 +100,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, onDelete, deleteVisible })
 
             <button onClick={toggleFavorite} className="mt-4 text-blue-500 hover:text-blue-700 pl-3 pb-3">
                 {isFavorite ? <Favorite /> : <FavoriteBorder />}
-                <span className="ml-2">{isFavorite ? t("eventCard.addToFavorites") : t("eventCard.removeFromFavorites")}</span>
+                <span className="ml-2">{isFavorite ? t("eventCard.removeFromFavorites") : t("eventCard.addToFavorites")}</span>
             </button>
 
 
