@@ -8,7 +8,7 @@
     "eventList": {
       "title": "Event Listings",
       "addEvent": "Add Event",
-      "searchPlaceholder": "Search events...",
+      "searchPlaceholder": "Search events By Name...",
       "sortBy": {
         "date": "Sort by Date",
         "guest": "Sort by No. of Guests",

@@ -95,7 +95,7 @@ const MockData = [
       "location": "Kathmandu, Nepal",
       "time": "2024-03-10T10:00:00",
       "organizer": "Nepal Cultural Society",
-      "description": "Celebrate the festival of colors with music, dance, and fun.",
+      "description": "Celebrate the festival of colors with music, dance, and fun. THe",
       "image": "https://www.travelandleisure.com/thmb/OGqKU3DtKB-TmF7OWZKtP58jy88=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/bhaktapur-nepal-holi-HOLI0219-b713df59f115452baa1374efb3e59ff2.jpg",
       "guests": 10000
     }

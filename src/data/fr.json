@@ -8,7 +8,7 @@
     "eventList": {
       "title": "Liste des Événements",
       "addEvent": "Ajouter un Événement",
-      "searchPlaceholder": "Rechercher des événements...",
+      "searchPlaceholder": "Rechercher des événements par nom...",
       "sortBy": {
         "date": "Trier par Date",
         "guest": "Trier par Nombre d'Invités",

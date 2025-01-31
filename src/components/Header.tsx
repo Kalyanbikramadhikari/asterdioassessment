@@ -28,12 +28,12 @@ const Header = () => {
                     <Link to='/'> {t("header.Home")}</Link>
 
                 </span>
-                <span
+                {/* <span
                     className={`cursor-pointer ${location.pathname === '/about' ? 'text-[#E93D14]' : ''}`}                >
                     <Link to='/about'> {t("header.About")}</Link>
 
 
-                </span>
+                </span> */}
                 <span
                     className={`cursor-pointer relative ${location.pathname === '/favorites' ? 'text-[#E93D14]' : ''}`}
                 >

@@ -20,10 +20,11 @@ interface Event {
 
 interface EventCardProps {
     event: Event;
+    deleteVisible?: boolean;
     onDelete: (id: number) => Promise<void>;
 }
 
-const EventCard: React.FC<EventCardProps> = ({ event, onDelete }) => {
+const EventCard: React.FC<EventCardProps> = ({ event, onDelete, deleteVisible }) => {
     const dispatch = useDispatch();
     const favorites = useSelector((state: RootState) => state.favorites.favorites);
     const isFavorite = favorites.some((fav: Event) => fav.id === event.id);
@@ -61,9 +62,14 @@ const EventCard: React.FC<EventCardProps> = ({ event, onDelete }) => {
                 </div>
             </Link>
 
-            <div onClick={handleDeleteClick} className="flex justify-center items-center h-10 w-10 bg-gray-200 absolute top-3 left-3 text-red-600 rounded-full" >
-                <Delete />
-            </div>
+            {
+                deleteVisible && (
+                    <div onClick={handleDeleteClick} className="flex justify-center items-center h-10 w-10 bg-gray-200 absolute top-3 left-3 text-red-600 rounded-full" >
+                        <Delete />
+                    </div>
+                )
+            }
+
             <Link to={`/event/${event.id}`}>
 
                 <img src={event.image} alt={event.name} className="w-full h-48 object-cover" />
@@ -105,7 +111,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, onDelete }) => {
                         <h3 className="text-xl font-bold mb-4">{t("eventCard.deleteConfirmation")} </h3>
                         <div className="flex justify-end space-x-4">
                             <button onClick={cancelDelete} className="px-4 py-2 bg-gray-200 rounded-lg cursor-pointer">
-                            {t("eventCard.cancel")}
+                                {t("eventCard.cancel")}
                             </button>
                             <button onClick={confirmDelete} className="px-4 py-2 bg-red-600 text-white rounded-lg cursor-pointer">
                                 {t("eventCard.delete")}

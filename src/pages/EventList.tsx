@@ -122,7 +122,7 @@ const EventList = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {currentEvents && currentEvents.map((event) => (
                                     < div key={event.id}>
-                                        <EventCard event={event} onDelete={handleDeleteEvent} />
+                                        <EventCard event={event} onDelete={handleDeleteEvent} deleteVisible={true}/>
 
                                     </div>
                                 ))}
