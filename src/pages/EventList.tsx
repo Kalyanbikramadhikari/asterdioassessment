@@ -80,7 +80,7 @@ const EventList = () => {
                                 <h1 className="text-3xl font-bold mb-6">Event Listings</h1>
 
                                 <Link to="/addEvent">
-                                    <button className="hidden md:flex border-2 border-[#E93D14] px-6 py-2 text-[#E93D14] rounded-3xl cursor-pointer ">
+                                    <button className="hidden md:flex  bg-[#E93D14] px-6 py-2 text-[#ffffff] rounded-3xl cursor-pointer ">
                                         Add Event <Add />
                                     </button>
                                 </Link>

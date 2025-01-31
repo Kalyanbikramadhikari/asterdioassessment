@@ -96,7 +96,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, onDelete }) => {
 
 
             {openDeleteConfirmation && (
-                <div className="fixed inset-0 z-50 bg-gray-600 bg-opacity-50 flex justify-center items-center">
+                <div className="fixed inset-0 z-50 bg-[#434343] bg-opacity-20 flex justify-center items-center">
                     <div className="bg-white p-6 rounded-lg shadow-lg">
                         <h3 className="text-xl font-bold mb-4">Are you sure you want to delete this event?</h3>
                         <div className="flex justify-end space-x-4">
